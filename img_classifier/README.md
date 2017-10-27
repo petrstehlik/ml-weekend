@@ -1,14 +1,9 @@
 
 # DataLab VM
 
-### Opening shell
-
-   - Go to [google-cloud-vm](https://console.cloud.google.com/compute/instances)
-   - Click on the shell image in top right corner ">_" ([quick-start](https://cloud.google.com/shell/docs/quickstart))
-
-
 ### Creating project
- - `gcloud projects create <project-name>`
+ - Go to [google-cloud-vm](https://console.cloud.google.com/compute/instances)
+ - Click on the shell image in top right corner ">_" ([quick-start](https://cloud.google.com/shell/docs/quickstart))
  - Set project: `gcloud config set project <project-name>`
  - Set zone `gcloud config set compute/zone ZONE europe-west1-b`
 
@@ -66,3 +61,5 @@ It contains:
 chmod +x ml_weekend_img/setup.py
 ./ml_weekend_img/setup.py
 ```
+
+

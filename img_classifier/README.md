@@ -48,7 +48,7 @@ It contains:
     - Loader of images for keras NN
     - Simple keras implementation of image classifier
 
-First create a jupyter-notebook.
+First create a jupyter-notebook in the root folder.
 
 ```python
 !git clone https://github.com/kiwicom/ml-weekend.git

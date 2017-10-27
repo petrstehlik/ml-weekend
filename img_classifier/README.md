@@ -1,7 +1,7 @@
 
 # DataLab VM
 
-### Creating project
+### Setting up the project
  - Go to [google-cloud-vm](https://console.cloud.google.com/compute/instances)
  - Click on the shell image in top right corner ">_" ([quick-start](https://cloud.google.com/shell/docs/quickstart))
  - Set project: `gcloud config set project <project-name>`
@@ -12,7 +12,7 @@ On the current [page](https://console.cloud.google.com/compute/instances) you sh
 If you don't have any, you can create one.
 
 ####  Creating of VM
- In the shell `datalab create <datalab-instance-name> --machine-type <machine-type> --no-create-repository -zone europe-west1-b`
+ In the shell `datalab create <datalab-instance-name> --machine-type <machine-type> --no-create-repository --zone europe-west1-b`
 
  Replace `<datalab-instance-name>` with custom name. It's prefered to include your name. `<machine-type>` replace by machine name. List of machines can be found [here](https://cloud.google.com/compute/docs/machine-types). If you omit `--machine-type <machine-type>` default machine is used `n1-standard-1` which is 1 CPU and 3.75 GB RAM.
  NOTE: You can't select GPUs this way. We'll demand GPUs for the created instance in a next section
@@ -43,23 +43,22 @@ Note: To execute bash command prepend it by `!` (for one liners) or write to the
 
 ### Getting git repo
 It contains:
-    - Instalation script
+    - Installation script
     - Script for downloading data
     - Loader of images for keras NN
     - Simple keras implementation of image classifier
 
+First create a jupyter-notebook.
 
 ```python
-!git clone https://gitlab.com/mavrix93/ml_weekend_img.git
+!git clone https://github.com/kiwicom/ml-weekend.git
 ```
 
 ### Make instalation script executable and run it
 
 
-```bash
-%%bash
-chmod +x ml_weekend_img/setup.py
-./ml_weekend_img/setup.py
+```
+!python3 ml-weekend/img_classifier/setup.py
 ```
 
-
+Now you can open `aircrafts_cnn.ipynb` in notebooks/

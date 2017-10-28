@@ -4,7 +4,7 @@ import logging
 import os
 import subprocess
 import sys
-import  init_env
+import init_env
 
 init_env.init()
 

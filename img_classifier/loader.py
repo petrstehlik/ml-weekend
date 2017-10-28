@@ -71,7 +71,7 @@ def load_dataset_multiproc(designation, classes, n_jobs=-1, n_samples=None):
 
 def _load_dataset(classes, line):
     file_desig = line.split()[0]
-    file_class = line.split(None, maxsplit=1)[1].strip()
+    file_class = line.split(None, 1)[1].strip()
     img = load_image("{}/images/{}.jpg".format(os.environ.get("AIRCRAFT_DATA"), file_desig))
     return img, classes[file_class]
 
@@ -85,6 +85,10 @@ def load_classes(designation):
 
 
 def load_data(n_jobs=1, n_train=None, n_test=None):
+    if n_jobs == -1:
+        n_jobs = multiprocessing.cpu_count()
+        print("Using max cpus:", n_jobs)
+
     classes = load_classes('manufacturers')
     (x_train, y_train) = load_dataset('images_manufacturer_train', classes, n_jobs, n_samples=n_train)
     (x_test, y_test) = load_dataset('images_manufacturer_test', classes, n_jobs, n_samples=n_test)

@@ -61,4 +61,4 @@ First create a jupyter-notebook in the root folder.
 !python3 ml-weekend/img_classifier/setup.py
 ```
 
-Now you can open `aircrafts_cnn.ipynb` in notebooks/
+Now you can open `aircrafts_cnn.ipynb` in notebooks/. Ensure that you are using python3 kernel.

@@ -56,7 +56,7 @@ def load_dataset_multiproc(designation, classes, n_jobs=-1, n_samples=None):
     pool = multiprocessing.Pool(n_jobs)
 
     result, class_numbers = [], []
-    for r, c in pool.map_async(partial(_load_dataset, tasks), classes).get(
+    for r, c in pool.map_async(partial(_load_dataset, classes), tasks).get(
 
     ):
         result.append(r)

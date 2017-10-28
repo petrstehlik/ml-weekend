@@ -69,7 +69,7 @@ def load_dataset_multiproc(designation, classes, n_jobs=-1, n_samples=None):
     return result, class_numbers
 
 
-def _load_dataset(line, classes):
+def _load_dataset(classes, line):
     file_desig = line.split()[0]
     file_class = line.split(None, maxsplit=1)[1].strip()
     img = load_image("{}/images/{}.jpg".format(os.environ.get("AIRCRAFT_DATA"), file_desig))

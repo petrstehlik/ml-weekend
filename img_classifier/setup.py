@@ -4,15 +4,12 @@ import logging
 import os
 import subprocess
 import sys
+import  init_env
+
+init_env.init()
 
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
-sys.path.append(os.path.join(os.path.dirname(__file__)))
 
-if "DATALAB_ROOT" not in os.environ:
-    os.environ["DATALAB_ROOT"] = '/content/datalab/'
-
-if "AIRCRAFT_DATA" not in os.environ:
-    os.environ["AIRCRAFT_DATA"] = os.environ.get("DATALAB_ROOT") + 'data/fgvc-aircraft-2013b/data'
 
 PATH_TO_PACKAGE = os.environ.get("DATALAB_ROOT") + "ml-weekend/img_classifier/"
 
@@ -34,7 +31,7 @@ subprocess.call(["unzip", "-q", os.environ.get("DATALAB_ROOT") + "data/" + DATA_
 logging.info("..done")
 logging.info("Installing requirements")
 subprocess.call(["pip3", "install", "-r", PATH_TO_PACKAGE+"requirements.txt"])
-subprocess.call(["pip", "install", "tensorboard"])
+subprocess.call(["pip2", "install", "tensorboard"])
 
 # logging.info("Upgrading keras")
 # subprocess.call(["pip3", "install", "git+git://github.com/fchollet/keras.git", "--upgrade"])
